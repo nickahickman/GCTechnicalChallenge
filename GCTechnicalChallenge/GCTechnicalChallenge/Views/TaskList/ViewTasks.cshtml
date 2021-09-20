@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Current Tasks";
+}
+
+@model List<Tasks>
+
+<h1>All Tasks</h1>
+
+@await Html.PartialAsync("_SearchTasks")
+
+@await Html.PartialAsync("_TaskTable", Model)
+
+@await Html.PartialAsync("_AddTask")

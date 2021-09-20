@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Search Tasks";
+}
+
+@model List<Tasks>
+
+@if (Model.Count > 0)
+{
+    <h1>Tasks matching: "@ViewBag.Query"</h1>
+
+    @await Html.PartialAsync("_SearchTasks")
+    @await Html.PartialAsync("_TaskTable", Model)
+}
+else
+{
+    <h2>No tasks matching "@ViewBag.Query"</h2>
+
+    @await Html.PartialAsync("_SearchTasks")
+}
+
+@await Html.PartialAsync("_AddTask")
